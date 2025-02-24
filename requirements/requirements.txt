@@ -1,0 +1,7 @@
+
+Flask
+pytz
+psutil
+psycopg2
+APScheduler
+requests
