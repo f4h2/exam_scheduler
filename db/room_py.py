@@ -1,13 +1,14 @@
 import json
 class RoomPy:
     def __init__(self):
-        self.id = None
-        self.name_room = None
-        self.camera_links = []
-
+        self.uuidLocation = None
+        self.name = None
+        self.description = None
+        self.uuidOrganization = None
     def to_dict(self):
         return {
-            "id": self.id,
-            "name_room": self.name_room,
-            "camera_links": json.loads(self.camera_links) if isinstance(self.camera_links, str) else self.camera_links
+            "id": self.uuidLocation,
+            "name": self.name,
+            "description": self.description,
+            "uuidOrganization":self.uuidOrganization
         }

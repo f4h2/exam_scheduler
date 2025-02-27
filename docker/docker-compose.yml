@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: exam_schedule_app
+    ports:
+      - "5032:5032"
+    depends_on:
+      - postgres_db
+    environment:
+      POSTGRES_USER: stream
+      POSTGRES_PASSWORD: stream
+      POSTGRES_HOST: postgres_db
+      POSTGRES_PORT: "5432"
+      POSTGRES_DB: stream
+      APP_ID: "ic-app-id"
+      APP_SECRET: "ICSecret@2025"
+      HOUR: "14"
+      MINUTE: "37"
+
+  postgres_db:
+    image: postgres:14.1-alpine
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: stream
+      POSTGRES_PASSWORD: stream
+      POSTGRES_DB: stream
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
