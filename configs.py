@@ -6,11 +6,11 @@ POSTGRES_HOST = os.getenv("POSTGRES_HOST", "localhost")
 POSTGRES_PORT = os.getenv("POSTGRES_PORT", "5432")
 POSTGRES_DB = os.getenv("POSTGRES_DB", "stream")
 
-HOUR =  os.getenv("HOUR","13")
-MINUTE = os.getenv("MINUTE","53")
+HOUR = os.getenv("HOUR", "13")
+MINUTE = os.getenv("MINUTE", "53")
 
-APP_ID = os.getenv("APP_ID","ic-app-id")
-APP_SECRET = os.getenv("APP_SECRET","ICSecret@2025")
+APP_ID = os.getenv("APP_ID", "ic-app-id")
+APP_SECRET = os.getenv("APP_SECRET", "ICSecret@2025")
 
 API_URL1 = "https://api-aof-dev.icenter.ai/integration-service/v1/calendar-events"
 API_URL3 = "https://api-aof-dev.icenter.ai/integration-service/v1/locations"
